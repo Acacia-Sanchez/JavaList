@@ -9,23 +9,23 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class JavalistApplication {
 
+	private List<String> listadias; // definida como atributo de clase para poder usarla en varios métodos
+
 	// 1. método para crear la lista de los días de la semana
-	public List<String> creaListaDiasSemana() {
-		List<String> listadias = new ArrayList<>(Arrays.asList("Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"));
+	public void creaListaDiasSemana(List<String> listadias) {
+		listadias.addAll(Arrays.asList("Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"));
 /* 		listadias.add("Lunes");
 		listadias.add("Martes");
-		listadias.add("Miércoles");
+		listadias.add("Miércoles");  OTRA FORMA DE HACERLO
 		listadias.add("Jueves");
 		listadias.add("Viernes");
 		listadias.add("Sábado");
 		listadias.add("Domingo"); */
-		
-		return listadias;
 	}
 
 	// 2. método que retorne los días de la semana
-	public String muestraDiasSemana(String dia) {
-		return null;
+	public List<String> muestraDiasSemana() {
+		return listadias;
 	}
 
 	// 3. método que retorne el largo de la lista
